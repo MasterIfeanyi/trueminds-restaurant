@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from '@/pages/Home/Home'
 import Dashboard from '@/pages/Dashboard/Dashboard'
-import Layout from '../../Layout/layout'
+import Layout from '../../layout/layout'
 
 // import MainLayout from '@/components/Layout/MainLayout'
 
