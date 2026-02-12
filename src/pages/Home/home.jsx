@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
+      <h1 className="flex flex-col text-green-500">Home</h1>
       <p>Theme: {}</p>
       <button onClick={() => console.log("safe")}>Toggle theme</button>
     </div>
