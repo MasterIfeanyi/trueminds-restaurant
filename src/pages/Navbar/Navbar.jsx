@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
+import logo from '@/assets/Chuks_Kitchen.png'; // Adjust path to where you save the logo
 
 const Navbar = () => {
   const location = useLocation();
@@ -28,26 +29,28 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-100 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="shadow-sm bg-white">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-3">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <span className="text-2xl font-serif italic text-orange-500">
-              Chiks Kitchen
-            </span>
+          <Link to="/" className="shrink-0">
+            <img 
+              src={logo} 
+              alt="Chuks Kitchen" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base font-normal transition-colors ${
                   isActive(link.path)
-                    ? 'text-gray-900'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-black font-medium'
+                    : 'text-gray-700 hover:text-black'
                 }`}
               >
                 {link.name}
@@ -56,8 +59,8 @@ const Navbar = () => {
           </div>
 
           {/* Login Button - Desktop */}
-          <div className="hidden md:block flex-shrink-0">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-lg text-sm font-medium transition-colors">
+          <div className="hidden md:block shrink-0">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 transition rounded-lg text-base shadow-sm hover:shadow-md">
               Login
             </button>
           </div>
@@ -66,13 +69,13 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+              className="text-gray-700 hover:text-black focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <AiOutlineClose className="h-6 w-6" />
+                <AiOutlineClose className="h-7 w-7" />
               ) : (
-                <HiMenuAlt3 className="h-6 w-6" />
+                <HiMenuAlt3 className="h-7 w-7" />
               )}
             </button>
           </div>
@@ -81,23 +84,23 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-white border-t border-gray-100">
+          <div className="px-4 pt-3 pb-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={closeMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                className={`block px-4 py-2.5 rounded-lg text-base font-normal transition-colors ${
                   isActive(link.path)
-                    ? 'bg-gray-100 text-gray-900'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-gray-50 text-black font-medium'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-black'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <button className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <button className="w-full mt-3 bg-[#FF8C42] hover:bg-[#FF7A29] text-white px-6 py-2.5 rounded-lg text-base font-medium transition-all">
               Login
             </button>
           </div>

@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from '@/pages/Home/Home'
-import Dashboard from '@/pages/Dashboard/Dashboard'
 import Layout from '@/layout/layout'
 
 // import MainLayout from '@/components/Layout/MainLayout'
@@ -17,7 +16,6 @@ export function AppRouter() {
             <Route path="/explore" element={<div>Explore Page</div>} />
             <Route path="/my-orders" element={<div>My Orders Page</div>} />
             <Route path="/account" element={<div>Account Page</div>} />
-            <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
