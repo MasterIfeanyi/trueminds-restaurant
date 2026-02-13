@@ -1,5 +1,5 @@
 // src/components/Navbar/Navbar.jsx
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -42,19 +42,19 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center gap-20">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.path}
                 to={link.path}
-                className={`text-base font-normal transition-colors ${
+                className={`text-base font-medium transition-colors ${
                   isActive(link.path)
-                    ? 'text-black font-medium'
+                    ? 'text-orange-500'
                     : 'text-gray-700 hover:text-black'
                 }`}
               >
                 {link.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-4 pt-3 pb-4 space-y-2">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.path}
                 to={link.path}
                 onClick={closeMenu}
@@ -98,7 +98,7 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
-              </Link>
+              </NavLink>
             ))}
             <button className="w-full mt-3 bg-[#FF8C42] hover:bg-[#FF7A29] text-white px-6 py-2.5 rounded-lg text-base font-medium transition-all">
               Login
