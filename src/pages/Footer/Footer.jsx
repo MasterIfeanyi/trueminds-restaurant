@@ -57,7 +57,7 @@ const Footer = () => {
                             href="tel:+2348012345678" 
                             className="text-white/80 hover:text-white transition-colors duration-200 text-sm flex items-start"
                             >
-                            <span>+234 801 234 5678</span>
+                                <span>+234 801 234 5678</span>
                             </a>
                         </li>
                         <li>
@@ -65,7 +65,7 @@ const Footer = () => {
                             href="mailto:hello@chukakitchen.com" 
                             className="text-white/80 hover:text-white transition-colors duration-200 text-sm break-all"
                             >
-                            hello@chukakitchen.com
+                                hello@chukakitchen.com
                             </a>
                         </li>
                         <li className="text-white/80 text-sm leading-relaxed">
@@ -85,7 +85,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             >
-                            Facebook
+                                Facebook
                             </a>
                         </li>
                         <li>
@@ -95,7 +95,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             >
-                            Twitter
+                                Twitter
                             </a>
                         </li>
                         <li>
@@ -105,7 +105,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             >
-                            LinkedIn
+                                LinkedIn
                             </a>
                         </li>
                         <li>
@@ -115,7 +115,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             >
-                            Instagram
+                                Instagram
                             </a>
                         </li>
                     </ul>

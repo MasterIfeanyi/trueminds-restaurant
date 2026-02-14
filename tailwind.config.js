@@ -19,6 +19,9 @@ export default {
         '28': '7rem',     // 112px
         '32': '8rem',     // 128px
       },
+      screens: {
+        'mobile-sim': '568px',
+      },
     },
   },
   plugins: [],
