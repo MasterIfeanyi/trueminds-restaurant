@@ -1,4 +1,4 @@
-import { FaArrowUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/Chuks_Kitchen.png'; 
 import ScrollToTop from '../../_components/Scrolltotop';
 
@@ -26,29 +26,24 @@ const Footer = () => {
                     <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul className="space-y-3">
                         <li>
-                            <a href="#" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
+                            <Link to="/" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
+                            <Link to="/explore" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
                                 Explore
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
+                            <Link to="/my-orders" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
                                 My Order
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
+                            <Link to="/account" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
                                 Account
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="text-white/80 hover:text-white transition-colors duration-200 text-sm">
-                                Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

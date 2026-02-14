@@ -8,18 +8,6 @@ export default function Home() {
       <h1 className="flex flex-col text-green-500">Home</h1>
       <p>Theme: {}</p>
       <button onClick={() => console.log("safe")}>Toggle theme</button>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div className="w-100 h-100"></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   )
 }

@@ -5,9 +5,9 @@ const Layout = ({children}) => {
 
 
   return (
-    <div className='App'>
+    <div className='App flex flex-col min-h-screen'>
       <Navbar />
-      <div className="mobile-container">
+      <div className="mobile-container grow">
         {children}
       </div>
       <Footer />
