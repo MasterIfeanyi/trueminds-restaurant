@@ -1,7 +1,6 @@
 import PhoneLayout from '../../layout/PhoneLayout'
 
-
-const Checkout = () => {
+const OrderSummary = () => {
 
 
   return (
@@ -11,4 +10,4 @@ const Checkout = () => {
   )
 }
 
-export default Checkout
+export default OrderSummary
