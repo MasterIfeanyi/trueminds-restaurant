@@ -1,14 +1,18 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Home from '@/pages/Home/Home'
 import Layout from '@/layout/layout'
-
-// import MainLayout from '@/components/Layout/MainLayout'
 
 // Checkout Flow Components
 import OrderSummary from '@/pages/Checkout/OrderSummary';
 import Payment from '@/pages/Checkout/Payment';
 import ProcessingOrder from '@/pages/Checkout/ProcessingOrder';
 import OrderSuccess from '@/pages/Checkout/OrderSuccess';
+import PhoneLayout from '../../layout/PhoneLayout';
+
+// Create a PhoneLayout wrapper component
+const PhoneLayoutWrapper = () => {
+  return <PhoneLayout><Outlet /></PhoneLayout>;
+};
 
 export function AppRouter() {
   return (
@@ -20,10 +24,12 @@ export function AppRouter() {
         <Route path="/account" element={<div>Account Page</div>} />
 
         {/* Checkout Flow - Sequential Routes */}
-        <Route path="/my-orders" element={<OrderSummary />} />
-        <Route path="/my-orders/payment" element={<Payment />} />
-        <Route path="/my-orders/processing" element={<ProcessingOrder />} />
-        <Route path="/my-orders/success" element={<OrderSuccess />} />
+        <Route path="/my-orders" element={<PhoneLayoutWrapper />}>
+          <Route index element={<OrderSummary />} />
+          <Route path="/my-orders/payment" element={<Payment />} />
+          <Route path="/my-orders/processing" element={<ProcessingOrder />} />
+          <Route path="/my-orders/success" element={<OrderSuccess />} />
+        </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
 

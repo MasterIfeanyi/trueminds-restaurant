@@ -25,7 +25,7 @@ const Payment = () => {
     const data = sessionStorage.getItem('checkoutData');
     if (!data) {
       // If no checkout data, redirect back to order summary
-      navigate('/checkout', { replace: true });
+      navigate('/my-orders', { replace: true });
       return;
     }
   }, [navigate]);
@@ -54,7 +54,7 @@ const Payment = () => {
     sessionStorage.setItem('paymentData', JSON.stringify(paymentData));
 
     // Navigate to processing page
-    navigate('/checkout/processing');
+    navigate('/my-orders/processing');
   };
 
   if (!checkoutData) {
