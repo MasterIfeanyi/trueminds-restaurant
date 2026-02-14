@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ProcessingOrder = () => {
   const navigate = useNavigate();
-  const [processingStage, setProcessingStage] = useState('verifying');
 
   useEffect(() => {
     // Check if payment data exists
@@ -16,18 +15,6 @@ const ProcessingOrder = () => {
     // Simulate payment processing stages
     const processPayment = async () => {
       try {
-        // Stage 1: Verifying payment
-        setProcessingStage('verifying');
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        // Stage 2: Processing
-        setProcessingStage('processing');
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // Stage 3: Confirming order
-        setProcessingStage('confirming');
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
         // Generate order ID
         const orderId = `123RGR${Math.floor(100000 + Math.random() * 900000)}Y`;
         
@@ -59,35 +46,44 @@ const ProcessingOrder = () => {
     processPayment();
   }, [navigate]);
 
-  const stages = {
-    verifying: 'Verifying payment details...',
-    processing: 'Processing your payment...',
-    confirming: 'Confirming your order...'
-  };
+  
 
   return (
-    <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8 flex flex-col items-center justify-center min-h-[400px]">
-      {/* Loading Spinner */}
-      <div className="relative w-16 h-16 mb-6">
-        <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
-        <div className="absolute inset-0 border-4 border-orange-500 rounded-full border-t-transparent animate-spin"></div>
-      </div>
+    <div className="w-full max-w-md p-8 flex flex-col items-center justify-center min-h-[400px]">
 
-      {/* Processing Text */}
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">
-        {stages[processingStage]}
-      </h2>
-      
-      <p className="text-sm text-gray-500 text-center">
-        Please don't close this page
-      </p>
+      <div className="flex flex-col items-center justify-center h-screen">
 
-      {/* Progress Dots */}
-      <div className="flex gap-2 mt-6">
-        <div className={`w-2 h-2 rounded-full ${processingStage === 'verifying' ? 'bg-orange-500 animate-pulse' : 'bg-gray-300'}`}></div>
-        <div className={`w-2 h-2 rounded-full ${processingStage === 'processing' ? 'bg-orange-500 animate-pulse' : 'bg-gray-300'}`}></div>
-        <div className={`w-2 h-2 rounded-full ${processingStage === 'confirming' ? 'bg-orange-500 animate-pulse' : 'bg-gray-300'}`}></div>
-      </div>
+        <div className="relative w-12 h-12">
+          <style>
+            {`
+              @keyframes spinnerBar {
+                0% { background-color: #f97316; }
+                12.5% { background-color: #f97316; }
+                12.6% { background-color: #d1d5db; }
+                100% { background-color: #d1d5db; }
+              }
+            `}
+          </style>
+
+          {[...Array(8)].map((_, i) => {
+            return (
+              <span
+                key={i}
+                className={`absolute left-1/2 top-1/2 w-1.5 h-4 rounded-full`}
+                style={{
+                  backgroundColor: "#d1d5db",
+                  transform: `rotate(${i * 45}deg) translate(-50%, -150%)`,
+                  transformOrigin: "center",
+                  animation: "spinnerBar 2.4s linear infinite",
+                  animationDelay: `${i * 0.3}s`,
+                }}
+              />
+            );
+          })}
+        </div>
+
+        
+      </div>  
     </div>
   );
 };

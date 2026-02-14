@@ -22,6 +22,17 @@ export default {
       screens: {
         'mobile-sim': '568px',
       },
+      keyframes: {
+        pulseBar: {
+          "0%": { backgroundColor: "#f97316" },     // orange
+          "12.5%": { backgroundColor: "#f97316" },  // stay orange
+          "12.6%": { backgroundColor: "#d1d5db" },  // switch to gray
+          "100%": { backgroundColor: "#d1d5db" },
+        },
+      },
+      animation: {
+        pulseBar: "pulseBar 2.4s linear infinite",
+      },
     },
   },
   plugins: [],
