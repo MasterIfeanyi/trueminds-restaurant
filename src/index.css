@@ -3,8 +3,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -28,101 +27,6 @@ li{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .mexican-wave:before {
   -webkit-animation: mexican-wave .75s infinite ease backwards;
     animation: mexican-wave .75s infinite ease backwards;
@@ -134,9 +38,6 @@ li{
     transform: translateY(10px);
     width: 10px; 
 }
-
-
-
 
 
 @-webkit-keyframes mexican-wave {

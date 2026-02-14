@@ -7,11 +7,11 @@ const Layout = ({children}) => {
 
   return (
     <>
-      <Navbar />
-      <div className='App flex flex-col justify-center items-center min-h-screen'>
+      <div className='App flex flex-col min-h-screen'>
+        <Navbar />
         {children}
+        <Footer />  
       </div>
-      <Footer />  
     </>
   )
 }
