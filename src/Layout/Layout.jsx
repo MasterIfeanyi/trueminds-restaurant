@@ -1,4 +1,5 @@
 import Navbar from '@/pages/Navbar/Navbar';
+import Footer from '../pages/Footer/Footer';
 
 const Layout = ({children}) => {
 
@@ -9,6 +10,7 @@ const Layout = ({children}) => {
       <div className="mobile-container">
         {children}
       </div>
+      <Footer />
     </div>
   )
 }
