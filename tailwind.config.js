@@ -11,6 +11,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        brandGreen: "#0E7A3E",
+      },
       spacing: {
         '18': '4.5rem',   // 72px
         '20': '5rem',     // 80px
