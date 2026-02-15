@@ -13,6 +13,12 @@ export default {
     extend: {
       colors: {
         brandGreen: "#0E7A3E",
+        primary: "#F97316",
+        danger: "#EF4444",
+      },
+      ringColor: {
+        primary: "#F97316",
+        danger: "#EF4444",
       },
       spacing: {
         '18': '4.5rem',   // 72px

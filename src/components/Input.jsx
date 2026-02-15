@@ -1,4 +1,4 @@
-import search from "assets/search.svg";
+import search from "@/assets/search.svg";
 
 const Input = ({
   id,
@@ -19,7 +19,7 @@ const Input = ({
   ...rest
 }) => {
   return (
-    <div className={`w-full relative ${single ? "mb-4" : ""} ${className}`}>
+    <div className={`w-full relative ${single ? "mb-4" : ""}`}>
       {label && (
         <label
           htmlFor={id}
@@ -39,7 +39,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         {...rest}
-        className="w-full px-4 py-2 h-10 text-sm font-light mt-2 bg-white border rounded outline-none transition disabled:opacity-70 disabled:cursor-not-allowed border-grey focus:border-primary"
+        className={`w-full px-4 py-2 h-10 text-sm font-light mt-2 bg-white border rounded outline-none transition disabled:opacity-70 disabled:cursor-not-allowed border-grey focus:border-primary ${className}`}
       />
 
       {showAction && (

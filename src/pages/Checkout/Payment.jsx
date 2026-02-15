@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from "@/components/Button"
 
 const Payment = () => {
   const navigate = useNavigate();
@@ -132,7 +133,9 @@ const Payment = () => {
         {paymentMethod === 'card' && (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-2">Card Number</label>
+              <label className="block text-sm font-medium mb-2">
+                Card Number
+              </label>
               <input
                 type="text"
                 placeholder="1234 1234 1234 1234"
@@ -151,7 +154,9 @@ const Payment = () => {
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Expiration Date</label>
+                <label className="block text-sm font-medium mb-2">
+                  Expiration Date
+                </label>
                 <input
                   type="text"
                   placeholder="MM/YY"
