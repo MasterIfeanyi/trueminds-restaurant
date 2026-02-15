@@ -7,14 +7,21 @@ const ProcessingOrder = () => {
   useEffect(() => {
     // Check if payment data exists
     const paymentData = sessionStorage.getItem('paymentData');
+
+
     if (!paymentData) {
-      navigate('/checkout', { replace: true });
+      console.log("here")
+      navigate('/my-orders', { replace: true });
       return;
     }
 
     // Simulate payment processing stages
     const processPayment = async () => {
       try {
+
+        // ADD DELAY HERE - simulate processing time
+        await new Promise(resolve => setTimeout(resolve, 4000)); // 4 seconds
+
         // Generate order ID
         const orderId = `123RGR${Math.floor(100000 + Math.random() * 900000)}Y`;
         
@@ -33,13 +40,13 @@ const ProcessingOrder = () => {
         sessionStorage.removeItem('paymentData');
 
         // Navigate to success page
-        navigate('/checkout/success', { replace: true });
+        navigate('/my-orders/success', { replace: true });
 
       } catch (error) {
         console.error('Payment processing error:', error);
         // In production, navigate to error page
         alert('Payment failed. Please try again.');
-        navigate('/checkout/payment', { replace: true });
+        navigate('/my-orders/payment', { replace: true });
       }
     };
 
@@ -82,7 +89,7 @@ const ProcessingOrder = () => {
           })}
         </div>
 
-        
+
       </div>  
     </div>
   );

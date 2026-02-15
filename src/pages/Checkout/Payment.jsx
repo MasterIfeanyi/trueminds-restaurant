@@ -30,7 +30,10 @@ const Payment = () => {
     }
   }, [navigate]);
 
-  const handlePayment = async (e) => {
+  const handlePayment = (e) => {
+
+    console.log("fired")
+
     e.preventDefault();
 
     // Validate card details
@@ -51,10 +54,29 @@ const Payment = () => {
       } : { method: paymentMethod }
     };
 
-    sessionStorage.setItem('paymentData', JSON.stringify(paymentData));
+    // sessionStorage.setItem('paymentData', JSON.stringify(paymentData));
 
-    // Navigate to processing page
-    navigate('/my-orders/processing');
+    // // Navigate to processing page
+    // navigate('/my-orders/processing');
+
+    try {
+      sessionStorage.setItem('paymentData', JSON.stringify(paymentData));
+      
+      // Verify it was stored
+      const stored = sessionStorage.getItem('paymentData');
+      if (stored) {
+        console.log('Payment data stored successfully');
+        navigate('/my-orders/processing');
+      } else {
+        console.error('Failed to store payment data');
+        alert('Error storing payment data. Please try again.');
+      }
+    } catch (error) {
+      console.error('SessionStorage error:', error);
+      alert('Error processing payment. Please try again.');
+    }
+
+
   };
 
   if (!checkoutData) {

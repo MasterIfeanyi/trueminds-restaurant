@@ -1,19 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from "@/components/Button"
 
 const OrderSuccess = () => {
 
     const navigate = useNavigate();
 
-    const [orderData] = useState(() => {
-        try {
-            const confirmation = sessionStorage.getItem('orderConfirmation');
-            return confirmation ? JSON.parse(confirmation) : null;
-        } catch (error) {
-            console.error('Failed to parse order confirmation', error);
-            return null;
+    let orderData = null
+
+
+     try {
+        const confirmation = sessionStorage.getItem('orderConfirmation');
+        if (confirmation) {
+            orderData = JSON.parse(confirmation);
         }
-    });
+    } catch (error) {
+        console.error('Failed to parse order confirmation', error);
+    }
+    
 
     useEffect(() => {
         // Retrieve order confirmation
@@ -83,12 +87,14 @@ const OrderSuccess = () => {
 
         {/* Action Buttons */}
         <div className="space-y-3">
-            <button
+
+            <Button
+                label="Track Order"
                 onClick={handleTrackOrder}
-                className="w-full py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-            >
-                Track Order
-            </button>
+                variant="primary"
+                size="large"
+                className="bg-orange-500 hover:bg-orange-600"
+            />
 
             <button
                 onClick={handleGenerateReceipt}
