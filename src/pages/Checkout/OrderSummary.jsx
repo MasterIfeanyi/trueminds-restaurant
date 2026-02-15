@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from "@/components/Button"
 
 const OrderSummary = () => {
   const navigate = useNavigate();
@@ -91,12 +92,13 @@ const OrderSummary = () => {
       </div>
 
       {/* Proceed Button */}
-      <button
+      <Button
+        label="Proceed to Checkout"
         onClick={handleProceedToCheckout}
-        className="w-full py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-      >
-        Proceed to Checkout
-      </button>
+        variant="primary"
+        size="large"
+        className="bg-orange-500 hover:bg-orange-600"
+      />
     </div>
   );
 };

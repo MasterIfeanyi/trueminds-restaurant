@@ -222,12 +222,13 @@ const Payment = () => {
         )}
 
         {/* Pay Button */}
-        <button
+        <Button
+          label={`Pay ₦${checkoutData.total.toLocaleString()}`}
           type="submit"
-          className="w-full py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-        >
-          Pay ₦{checkoutData.total.toLocaleString()}
-        </button>
+          variant="primary"
+          size="large"
+          className="bg-orange-500 hover:bg-orange-600"
+        />
 
         {/* Security Notice */}
         <p className="text-xs text-gray-500 text-center mt-4">
