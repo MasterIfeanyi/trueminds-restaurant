@@ -6,6 +6,7 @@ import Input from "@/components/Input";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
+  const [deliveryMethod, setDeliveryMethod] = useState('delivery');
   const [promoCode, setPromoCode] = useState('');
   const [specialInstructions, setSpecialInstructions] = useState('');
 
@@ -15,6 +16,16 @@ const OrderSummary = () => {
     serviceFee: 200,
     tax: 300,
     total: 9900
+  };
+
+  const handleDeliveryMethodClick = (method) => {
+    setDeliveryMethod(method);
+    
+    if (method === 'delivery') {
+      // Navigate to delivery details page
+      navigate('/my-orders/delivery-details');
+    }
+    // If pickup is selected, stay on this page (no pickup page yet)
   };
 
   const handleProceedToCheckout = (e) => {
@@ -100,13 +111,38 @@ const OrderSummary = () => {
           </div>
         </div>
 
+        <div className="flex gap-0 mb-6 rounded-lg overflow-hidden">
+          <button
+            type="button"
+            onClick={() => handleDeliveryMethodClick('delivery')}
+            className={`flex-1 py-3 font-medium transition ${
+              deliveryMethod === 'delivery'
+                ? 'bg-orange-500 text-white'
+                : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+            }`}
+          >
+            Delivery
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDeliveryMethodClick('pickup')}
+            className={`flex-1 py-3 font-medium transition ${
+              deliveryMethod === 'pickup'
+                ? 'bg-orange-500 text-white'
+                : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+            }`}
+          >
+            Pick up
+          </button>
+        </div>
+
         {/* Special Instructions */}
         <div className="mb-6">
           <TextArea
             id="specialInstructions"
             name="specialInstructions"
             label="Special Instructions for Restaurant"
-            placeholder="E.g no cream, loud to be spicy, have its text NONONONONO"
+            placeholder="E.g no onion, food is too spicy, food is too hot hhhhhhhhhh food is tasty"
             rows={4}
             value={specialInstructions}
             onChange={(e) => setSpecialInstructions(e.target.value)}

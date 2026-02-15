@@ -3,6 +3,7 @@ import Home from '@/pages/Home/Home'
 import Layout from '@/layout/layout'
 
 // Checkout Flow Components
+import DeliveryDetails from '@/pages/Checkout/DeliveryDetails';
 import OrderSummary from '@/pages/Checkout/OrderSummary';
 import Payment from '@/pages/Checkout/Payment';
 import ProcessingOrder from '@/pages/Checkout/ProcessingOrder';
@@ -26,6 +27,7 @@ export function AppRouter() {
         {/* Checkout Flow - Sequential Routes */}
         <Route path="/my-orders" element={<PhoneLayoutWrapper />}>
           <Route index element={<OrderSummary />} />
+          <Route path="/my-orders/delivery-details" element={<DeliveryDetails />} />
           <Route path="/my-orders/payment" element={<Payment />} />
           <Route path="/my-orders/processing" element={<ProcessingOrder />} />
           <Route path="/my-orders/success" element={<OrderSuccess />} />
