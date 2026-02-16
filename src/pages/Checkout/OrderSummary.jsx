@@ -23,7 +23,9 @@ const OrderSummary = () => {
     
     if (method === 'delivery') {
       // Navigate to delivery details page
-      navigate('/my-orders/delivery-details');
+      navigate('/my-orders/delivery-details', { 
+        state: { deliveryMethod: method } 
+      });
     }
     // If pickup is selected, stay on this page (no pickup page yet)
   };
