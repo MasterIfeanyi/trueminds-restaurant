@@ -22,7 +22,7 @@ const Home = () => {
       <div 
         className="relative h-screen bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${tableDinner})`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${tableDinner})`
         }}
       >
     
@@ -48,7 +48,7 @@ const Home = () => {
         
 
         {/* Search Bar - Floating over hero section */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-3xl px-6 z-30">
+        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-full max-w-3xl px-6 z-30">
           <form onSubmit={handleSearch} className="relative">
             <div className="flex items-center bg-white rounded-lg shadow-2xl overflow-hidden">
               <div className="pl-6 pr-2">
@@ -67,6 +67,8 @@ const Home = () => {
 
 
       </div>
+
+
 
       {/* Additional sections can go here */}
       <section className="py-20 bg-white">
