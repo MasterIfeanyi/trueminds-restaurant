@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '@/assets/Chuks_Kitchen.png'; 
-import ScrollToTop from '../../_components/Scrolltotop';
+import ScrollToTop from '../Scrolltotop';
 
 const Footer = () => {
   return (
