@@ -10,14 +10,11 @@ const OrderSummary = () => {
   const [promoCode, setPromoCode] = useState('');
   const [specialInstructions, setSpecialInstructions] = useState('');
 
-  let total;
-
   const orderDetails = {
     subtotal: 9200,
     deliveryFee: 500,
     serviceFee: 200,
-    tax: 0,
-    total: {total}
+    tax: 0
   };
 
   const handleDeliveryMethodClick = (method) => {
@@ -50,6 +47,7 @@ const OrderSummary = () => {
     const checkoutData = {
       ...orderDetails,
       promoCode,
+      total: sumOrderTotal(orderDetails),
       specialInstructions,
       timestamp: Date.now() // eslint-disable-line 
     };
@@ -59,6 +57,14 @@ const OrderSummary = () => {
     // Navigate to payment page
     navigate('/my-orders/payment');
   };
+
+
+  const sumOrderTotal = (orderDetails) => {
+    const { subtotal, deliveryFee, serviceFee, tax } = orderDetails;
+    return [subtotal, deliveryFee, serviceFee, tax]
+      .reduce((sum, value) => sum + parseInt(value || 0), 0);
+  };
+
 
   return (
     <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
@@ -110,7 +116,7 @@ const OrderSummary = () => {
           <div className="border-t pt-3">
             <div className="flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>₦{total = parseInt(orderDetails.subtotal) + parseInt(orderDetails.deliveryFee) + parseInt(orderDetails.serviceFee) + parseInt(orderDetails.tax)}</span>
+              <span>₦{sumOrderTotal(orderDetails)}</span>
             </div>
           </div>
         </div>
