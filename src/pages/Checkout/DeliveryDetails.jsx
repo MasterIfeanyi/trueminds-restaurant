@@ -11,7 +11,6 @@ const DeliveryDetails = () => {
 
 
     const { deliveryMethod = 'delivery' } = location.state || {};
-    // const [deliveryMethod, setDeliveryMethod] = useState('delivery'); // 'delivery' or 'pickup'
     const [address, setAddress] = useState('123 Main Street, Victoria Island, Lagos\nApt 4B, Opposite Mega Plaza');
     const [deliveryTime, setDeliveryTime] = useState('ASAP(30-25)');
     const [deliveryInstructions, setDeliveryInstructions] = useState('');
@@ -21,12 +20,6 @@ const DeliveryDetails = () => {
 
     const handleProceedToOrderSummary = (e) => {
         e.preventDefault();
-        
-        // // Validate required fields
-        // if (deliveryMethod === 'delivery' && !address.trim()) {
-        //     alert('Please enter your delivery address');
-        //     return;
-        // }
         
         if (!deliveryTime.trim()) {
             alert('Please select a delivery time');

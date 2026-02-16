@@ -10,12 +10,14 @@ const OrderSummary = () => {
   const [promoCode, setPromoCode] = useState('');
   const [specialInstructions, setSpecialInstructions] = useState('');
 
+  let total;
+
   const orderDetails = {
-    subtotal: 2200,
-    deliveryFee: 200,
+    subtotal: 9200,
+    deliveryFee: 500,
     serviceFee: 200,
-    tax: 300,
-    total: 9900
+    tax: 0,
+    total: {total}
   };
 
   const handleDeliveryMethodClick = (method) => {
@@ -108,7 +110,7 @@ const OrderSummary = () => {
           <div className="border-t pt-3">
             <div className="flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>₦{orderDetails.total.toLocaleString()}</span>
+              <span>₦{total = parseInt(orderDetails.subtotal) + parseInt(orderDetails.deliveryFee) + parseInt(orderDetails.serviceFee) + parseInt(orderDetails.tax)}</span>
             </div>
           </div>
         </div>
