@@ -3,9 +3,55 @@ import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import tableDinner from "@/assets/table_dinner.png"
 
+import jollofImg from "@/assets/jollof.png";
+import fufuImg from "@/assets/fufu.png";
+import suyaImg from "@/assets/suya.png";
+import sweetTreatsImg from "@/assets/sweet_treats.png";
+import oilRiceImg from "@/assets/oil_rice.jpg";
+import fishImg from "@/assets/fish.png";
+
 const Home = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
+
+  const categories = [
+    {
+      id: 1,
+      name: 'Jollof Delights',
+      image: jollofImg,
+      alt: 'Jollof rice with grilled chicken'
+    },
+    {
+      id: 2,
+      name: 'Swallow & Soups',
+      image: fufuImg,
+      alt: 'Fufu with egusi soup'
+    },
+    {
+      id: 3,
+      name: 'Grills & BBQ',
+      image: suyaImg,
+      alt: 'Grilled suya skewers'
+    },
+    {
+      id: 4,
+      name: 'Sweet Treats',
+      image: sweetTreatsImg,
+      alt: 'Puff puff and chin chin'
+    },
+    {
+      id: 5,
+      name: 'Jollof Delights',
+      image: oilRiceImg,
+      alt: 'Jollof rice with chicken'
+    },
+    {
+      id: 6,
+      name: 'Grilled Fish',
+      image: fishImg,
+      alt: 'Grilled fish with spices'
+    }
+  ];
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -76,7 +122,35 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Popular Dishes
           </h2>
+
+
           {/* Add your popular dishes content here */}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-18 ">
+            {categories.map((category) => (
+              <div 
+                key={category.id}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+              >
+                {/* Image Container */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={category.image}
+                    alt={category.alt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                
+                {/* Category Name */}
+                <div className="px-6 py-12 text-center">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {category.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
     </div>
