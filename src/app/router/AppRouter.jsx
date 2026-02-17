@@ -8,7 +8,7 @@ import OrderSummary from '@/pages/Checkout/OrderSummary';
 import Payment from '@/pages/Checkout/Payment';
 import ProcessingOrder from '@/pages/Checkout/ProcessingOrder';
 import OrderSuccess from '@/pages/Checkout/OrderSuccess';
-import PhoneLayout from '../../layout/PhoneLayout';
+import PhoneLayout from '@/layout/PhoneLayout';
 
 // Create a PhoneLayout wrapper component
 const PhoneLayoutWrapper = () => {
