@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
-import Home from '@/pages/Home/Home'
-import Layout from '@/layout/layout'
+import Home from '@/pages/Home/home.jsx'
+import Layout from '@/layout/Layout.jsx';
 
 // Checkout Flow Components
 import DeliveryDetails from '@/pages/Checkout/DeliveryDetails';
