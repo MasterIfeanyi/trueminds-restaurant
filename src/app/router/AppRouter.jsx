@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import Home from '@/pages/Home/home.jsx'
-import Layout from '@/layout/Layout.jsx';
+import Layout from '@/Layout/Layout.jsx';
 
 // Checkout Flow Components
 import DeliveryDetails from '@/pages/Checkout/DeliveryDetails';
@@ -8,7 +8,7 @@ import OrderSummary from '@/pages/Checkout/OrderSummary';
 import Payment from '@/pages/Checkout/Payment';
 import ProcessingOrder from '@/pages/Checkout/ProcessingOrder';
 import OrderSuccess from '@/pages/Checkout/OrderSuccess';
-import PhoneLayout from '@/layout/PhoneLayout';
+import PhoneLayout from '@/Layout/PhoneLayout';
 
 // Create a PhoneLayout wrapper component
 const PhoneLayoutWrapper = () => {
